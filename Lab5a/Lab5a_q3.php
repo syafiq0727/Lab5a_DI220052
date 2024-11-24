@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Lab 5a Q3</title>
-</head>
-<body>
-    <?php
-        function calculateArea($length, $width) {
-            return $length * $width;
-        }
+<html>  
+    <body>  
+        <h2>Area Of Rectangle</h2>
+    <form method = "post">   
 
-        $length = 2; 
-        $width = 4;  
-        $area = calculateArea($length, $width);
-    ?>
+    Width: <input type="number" name="width">   
+    <br><br>   
+    Length: <input type="number" name="length"> <br> <br>
 
-    <p>The area of a rectangle with width <?php echo $width; ?> and length <?php echo $length; ?> is: <strong><?php echo $area; ?></strong></p>
-</body>
+            <input type = "submit" name = "submit" value="Calculate">   
+    </form>   
+    </body>   
 </html>
+
+<?php   
+if(isset($_POST['submit']))  
+    {   
+$width = $_POST['width'];   
+$length = $_POST['length'];   
+$area = $width*$length;   
+echo "The area of a rectangle with $width times $length is $area";
+}
+?>
